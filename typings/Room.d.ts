@@ -24,7 +24,7 @@ declare class Room {
   CheckLine(
     position1: Vector,
     position2: Vector,
-    lineCheckMode: LineCheckMode,
+    lineCheckMode: LineCheckMode | int,
     gridPathThreshold: int,
     ignoreWalls: boolean,
     ignoreCrushable: boolean,
@@ -71,8 +71,8 @@ declare class Room {
   GetEntities(): EntityList;
   GetAliveEnemiesCount(): int;
   GetAliveBossesCount(): int;
-  GetBossID(): BossIDs;
-  GetSecondBossID(): BossIDs;
+  GetBossID(): BossIDs | int;
+  GetSecondBossID(): BossIDs | int;
   TryPlaceLadder(
     playerPos: Vector,
     playerVelocity: Vector,

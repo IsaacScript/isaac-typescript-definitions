@@ -75,7 +75,7 @@ declare class Entity {
   IsInvincible(): boolean;
   CanShutDoors(): boolean;
   IsBoss(): boolean;
-  GetBossID(): BossIDs;
+  GetBossID(): BossIDs | int;
   GetLastParent(): Entity;
   GetLastChild(): Entity;
   HasCommonParentWithEntity(other: Entity): boolean;

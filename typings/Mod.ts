@@ -210,15 +210,15 @@ interface CallbackParameters {
   ];
   [ModCallbacks.MC_POST_LASER_INIT]: [
     callback: (entityLaser: EntityLaser) => void,
-    laserVariant?: LaserVariant,
+    laserVariant?: LaserVariant | int,
   ];
   [ModCallbacks.MC_POST_LASER_UPDATE]: [
     callback: (entityLaser: EntityLaser) => void,
-    laserVariant?: LaserVariant,
+    laserVariant?: LaserVariant | int,
   ];
   [ModCallbacks.MC_POST_LASER_RENDER]: [
     callback: (entityLaser: EntityLaser, renderOffset: Vector) => void,
-    laserVariant?: LaserVariant,
+    laserVariant?: LaserVariant | int,
   ];
   [ModCallbacks.MC_POST_KNIFE_INIT]: [
     callback: (entityKnife: EntityKnife) => void,

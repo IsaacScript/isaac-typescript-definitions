@@ -84,12 +84,12 @@ declare class Game {
   StartRoomTransition(
     roomIndex: int,
     direction: Direction | int,
-    roomTransition: RoomTransition,
+    roomTransition: RoomTransition | int,
   ): void;
   ChangeRoom(roomIndex: int): void;
   StartStageTransition(
     sameStage: boolean,
-    stageTransition: StageTransition,
+    stageTransition: StageTransition | int,
   ): void;
   MoveToRandomRoom(IAmErrorRoom: boolean, seed: int): void;
   GetFrameCount(): int;
@@ -145,7 +145,7 @@ declare class Game {
   UpdateStrangeAttractor(position: Vector): void;
   // GetAmbush(): Ambush; // Ambush is not implemented
   Fadein(speed: float): void;
-  Fadeout(speed: float, fadeoutTarget: FadeoutTarget): void;
+  Fadeout(speed: float, fadeoutTarget: FadeoutTarget | int): void;
 
   BossRushParTime: int;
   BlueWombParTime: int;

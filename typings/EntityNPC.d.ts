@@ -3,14 +3,14 @@ declare class EntityNPC extends Entity {
     entityType: EntityType | int,
     variant: EntityVariantForAC,
     subType: int,
-    championColorIdx: ChampionColorIdx,
+    championColorIdx: ChampionColorIdx | int,
   ): boolean;
   KillUnique(): void;
   IsBoss(): boolean;
   GetPlayerTarget(): Entity;
   CalcTargetPosition(distanceLimit: float): Vector;
   GetBossColorIdx(): int;
-  GetChampionColorIdx(): ChampionColorIdx;
+  GetChampionColorIdx(): ChampionColorIdx | int;
   ResetPathFinderTarget(): void;
   CanBeDamagedFromVelocity(velocity: Vector): boolean;
   CanReroll(): boolean;
@@ -28,7 +28,7 @@ declare class EntityNPC extends Entity {
   FireProjectiles(
     position: Vector,
     velocity: Vector,
-    projectilesMode: ProjectilesMode,
+    projectilesMode: ProjectilesMode | int,
     projectileParams: ProjectileParams,
   ): void;
   FireBossProjectiles(
