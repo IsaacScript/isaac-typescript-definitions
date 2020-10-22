@@ -1,4 +1,17 @@
-type EntityVariantForAC = EffectVariant | PickupVariant | BombVariant | FamiliarVariant | TearVariant | ProjectileVariant | PlayerVariant | LaserVariant | int; // Not actually limited to those, but give autocompletion
+/**
+ * EntityVariantForAC is a composition of multiple different kinds of variants for the purposes of
+ * aiding autocompletion. Note that this type does not actually provide any type safety. (e.g.
+ * "Variant: EntityVariantForAC" is the same as "Variant: int")
+ */
+type EntityVariantForAC =
+  | EffectVariant
+  | PickupVariant
+  | BombVariant
+  | FamiliarVariant
+  | TearVariant
+  | ProjectileVariant
+  | PlayerVariant
+  | LaserVariant;
 
 declare class Entity {
   GetData(): Record<string, unknown>;

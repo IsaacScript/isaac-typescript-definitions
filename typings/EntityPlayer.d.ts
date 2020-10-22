@@ -5,20 +5,20 @@ type CollectibleAnimationName =
   | "ShopIdle"
   | "PlayerPickup"
   | "PlayerPickupSparkle";
-type SlotId = 0 | 1
+type SlotId = 0 | 1;
 type ZodiacCollectibles =
-  | CollectibleType | int.COLLECTIBLE_CANCER
-  | CollectibleType | int.COLLECTIBLE_ARIES
-  | CollectibleType | int.COLLECTIBLE_LEO
-  | CollectibleType | int.COLLECTIBLE_SCORPIO
-  | CollectibleType | int.COLLECTIBLE_AQUARIUS
-  | CollectibleType | int.COLLECTIBLE_PISCES
-  | CollectibleType | int.COLLECTIBLE_TAURUS
-  | CollectibleType | int.COLLECTIBLE_GEMINI
-  | CollectibleType | int.COLLECTIBLE_CAPRICORN
-  | CollectibleType | int.COLLECTIBLE_SAGITTARIUS
-  | CollectibleType | int.COLLECTIBLE_LIBRA
-  | CollectibleType | int.COLLECTIBLE_VIRGO
+  | CollectibleType.COLLECTIBLE_CANCER
+  | CollectibleType.COLLECTIBLE_ARIES
+  | CollectibleType.COLLECTIBLE_LEO
+  | CollectibleType.COLLECTIBLE_SCORPIO
+  | CollectibleType.COLLECTIBLE_AQUARIUS
+  | CollectibleType.COLLECTIBLE_PISCES
+  | CollectibleType.COLLECTIBLE_TAURUS
+  | CollectibleType.COLLECTIBLE_GEMINI
+  | CollectibleType.COLLECTIBLE_CAPRICORN
+  | CollectibleType.COLLECTIBLE_SAGITTARIUS
+  | CollectibleType.COLLECTIBLE_LIBRA
+  | CollectibleType.COLLECTIBLE_VIRGO;
 
 declare class EntityPlayer extends Entity {
   RenderGlow(position: Vector): void;
@@ -78,7 +78,7 @@ declare class EntityPlayer extends Entity {
   GetMaxTrinkets(): int;
   GetMaxPoketItems(): int;
   DropPoketItem(pocketNum: int, position: Vector): void;
-  RemoveCollectible(collectibleType: int): void;
+  RemoveCollectible(collectibleType: CollectibleType): void;
   ClearTemporaryEffects(): void;
   DonateLuck(luck: int): void;
   CanPickBlackHearts(): boolean;
@@ -315,7 +315,7 @@ declare class EntityPlayer extends Entity {
   TearFallingSpeed: float;
   TearFallingAcceleration: float;
   MoveSpeed: float;
-  TearFlags | int: TearFlags | int;
+  TearFlags: TearFlags | int;
   TearColor: Color;
   LaserColor: Color;
   CanFly: boolean;

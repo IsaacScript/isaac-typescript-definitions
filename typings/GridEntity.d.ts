@@ -1,7 +1,12 @@
-type GridEntityVariantForAC = DoorVariant | PoopVariant | PlateVariant | int; // @TODO: add custom enums for other grid types
+/**
+ * GridEntityVariantForAC is a composition of multiple different kinds of variants for the purposes
+ * of aiding autocompletion. Note that this type does not actually provide any type safety. (e.g.
+ * "Variant: GridEntityVariantForAC" is the same as "Variant: int")
+ */
+type GridEntityVariantForAC = DoorVariant | PoopVariant | PlateVariant | int;
 
 declare class GridEntity {
-  SetType(gridEntityType: GridEntityType | int): void;
+  SetType(gridEntityType: GridEntityType): void;
   SetVariant(variant: GridEntityVariantForAC): void;
   Init(seed: int): void;
   PostInit(): void;

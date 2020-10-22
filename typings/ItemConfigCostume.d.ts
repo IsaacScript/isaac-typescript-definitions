@@ -1,3 +1,5 @@
+// This class is unused because "ItemConfig.GetCostumes()" is broken
+
 declare class ItemConfigCostume {
   ID: int;
   Anm2Path: string;
@@ -5,6 +7,6 @@ declare class ItemConfigCostume {
   HasOverlay: boolean;
   IsFlying: boolean;
   HasSkinAlt: boolean;
-  SkinColor: Color; // Not sure if this type is correct; needs testing
+  SkinColor: Color;
   OverwriteColor: boolean;
 }
