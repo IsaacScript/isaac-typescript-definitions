@@ -7,18 +7,18 @@ type CollectibleAnimationName =
   | "PlayerPickupSparkle";
 type SlotId = 0 | 1
 type ZodiacCollectibles =
-  | CollectibleType.COLLECTIBLE_CANCER
-  | CollectibleType.COLLECTIBLE_ARIES
-  | CollectibleType.COLLECTIBLE_LEO
-  | CollectibleType.COLLECTIBLE_SCORPIO
-  | CollectibleType.COLLECTIBLE_AQUARIUS
-  | CollectibleType.COLLECTIBLE_PISCES
-  | CollectibleType.COLLECTIBLE_TAURUS
-  | CollectibleType.COLLECTIBLE_GEMINI
-  | CollectibleType.COLLECTIBLE_CAPRICORN
-  | CollectibleType.COLLECTIBLE_SAGITTARIUS
-  | CollectibleType.COLLECTIBLE_LIBRA
-  | CollectibleType.COLLECTIBLE_VIRGO
+  | CollectibleType | int.COLLECTIBLE_CANCER
+  | CollectibleType | int.COLLECTIBLE_ARIES
+  | CollectibleType | int.COLLECTIBLE_LEO
+  | CollectibleType | int.COLLECTIBLE_SCORPIO
+  | CollectibleType | int.COLLECTIBLE_AQUARIUS
+  | CollectibleType | int.COLLECTIBLE_PISCES
+  | CollectibleType | int.COLLECTIBLE_TAURUS
+  | CollectibleType | int.COLLECTIBLE_GEMINI
+  | CollectibleType | int.COLLECTIBLE_CAPRICORN
+  | CollectibleType | int.COLLECTIBLE_SAGITTARIUS
+  | CollectibleType | int.COLLECTIBLE_LIBRA
+  | CollectibleType | int.COLLECTIBLE_VIRGO
 
 declare class EntityPlayer extends Entity {
   RenderGlow(position: Vector): void;
@@ -55,7 +55,7 @@ declare class EntityPlayer extends Entity {
   AddPrettyFly(): void;
   TryUseKey(): boolean;
   AddCostume(itemConfigItem: ItemConfigItem, itemStateOnly: boolean): void;
-  AddNullCostume(nullItemID: NullItemID): void;
+  AddNullCostume(nullItemID: NullItemID | int): void;
   RemoveCostume(itemConfigItem: ItemConfigItem): void;
   RemoveSkinCostume(): void;
   ClearCostumes(): void;
@@ -67,13 +67,13 @@ declare class EntityPlayer extends Entity {
   FlushQueueItem(): boolean;
   IsItemQueueEmpty(): boolean;
   AddCollectible(
-    collectibleType: CollectibleType,
+    collectibleType: CollectibleType | int,
     charge: int,
     addConsumables: boolean,
   ): void;
   GetCollectibleCount(): int;
-  AddTrinket(trinketType: TrinketType): void;
-  TryRemoveTrinket(trinketType: TrinketType): boolean;
+  AddTrinket(trinketType: TrinketType | int): void;
+  TryRemoveTrinket(trinketType: TrinketType | int): boolean;
   DropTrinket(dropPos: Vector, replaceTick: boolean): void;
   GetMaxTrinkets(): int;
   GetMaxPoketItems(): int;
@@ -83,7 +83,7 @@ declare class EntityPlayer extends Entity {
   DonateLuck(luck: int): void;
   CanPickBlackHearts(): boolean;
   CanPickGoldenHearts(): boolean;
-  GetActiveItem(): CollectibleType;
+  GetActiveItem(): CollectibleType | int;
   GetActiveCharge(): int;
   GetBatteryCharge(): int;
   GetActiveSubCharge(): int;
@@ -92,26 +92,26 @@ declare class EntityPlayer extends Entity {
   NeedsCharge(): boolean;
   FullCharge(): boolean;
   // GetPocketItem(slotID: int): Readonly<PlayerPocketItem>; // PlayerPocketItem is not implemented
-  AddCard(card: Card): void;
-  AddPill(pillColor: PillColor): void;
-  GetCard(slotID: SlotId): Card;
-  GetPill(slotID: SlotId): PillColor;
-  SetCard(slotID: SlotId, card: Card): void;
-  SetPill(slotID: SlotId, pillColor: PillColor): void;
-  HasCollectible(collectibleType: CollectibleType): boolean;
-  GetCollectibleNum(collectibleType: CollectibleType): int;
-  HasTrinket(trinketType: TrinketType): boolean;
-  HasPlayerForm(playerForm: PlayerForm): boolean;
+  AddCard(card: Card | int): void;
+  AddPill(pillColor: PillColor | int): void;
+  GetCard(slotID: SlotId): Card | int;
+  GetPill(slotID: SlotId): PillColor | int;
+  SetCard(slotID: SlotId, card: Card | int): void;
+  SetPill(slotID: SlotId, pillColor: PillColor | int): void;
+  HasCollectible(collectibleType: CollectibleType | int): boolean;
+  GetCollectibleNum(collectibleType: CollectibleType | int): int;
+  HasTrinket(trinketType: TrinketType | int): boolean;
+  HasPlayerForm(playerForm: PlayerForm | int): boolean;
   CanAddCollectible(): boolean;
-  TryHoldTrinket(trinketType: TrinketType): boolean;
+  TryHoldTrinket(trinketType: TrinketType | int): boolean;
   SetFullHearts(): void;
-  AddCacheFlags(cacheFlags: CacheFlag): void;
+  AddCacheFlags(cacheFlags: CacheFlag | int): void;
   EvaluateItems(): void;
   RespawnFamiliars(): void;
   GetNPCTarget(): Entity;
-  GetMovementDirection(): Direction;
-  GetFireDirection(): Direction;
-  GetHeadDirection(): Direction;
+  GetMovementDirection(): Direction | int;
+  GetFireDirection(): Direction | int;
+  GetHeadDirection(): Direction | int;
   GetAimDirection(): Readonly<Vector>;
   GetMovementVector(): Readonly<Vector>;
   GetRecentMovementVector(): Readonly<Vector>;
@@ -122,10 +122,10 @@ declare class EntityPlayer extends Entity {
   GetVelocityBeforeUpdate(): Readonly<Vector>;
   GetSmoothBodyRotation(): float;
   GetTearPoisonDamage(): float;
-  GetBombFlags(): TearFlags;
-  GetBombVariant(tearFlags: TearFlags, forceSmallBomb: boolean): BombVariant;
+  GetBombFlags(): TearFlags | int;
+  GetBombVariant(tearFlags: TearFlags | int, forceSmallBomb: boolean): BombVariant | int;
   GetTearHitParams(
-    weaponType: WeaponType,
+    weaponType: WeaponType | int,
     damageScale: float,
     tearDisplacement: int,
   ): TearParams;
@@ -141,13 +141,13 @@ declare class EntityPlayer extends Entity {
   HasGoldenBomb(): boolean;
   GetGoldenHearts(): int;
   GetNumCoins(): int;
-  GetPlayerType(): PlayerType;
+  GetPlayerType(): PlayerType | int;
   GetTrinket(trinketIndex: 0 | 1): int;
   GetNumBlueFlies(): int;
   GetNumBlueSpiders(): int;
   GetItemState(): int;
   UseActiveItem(
-    collectibleType: CollectibleType,
+    collectibleType: CollectibleType | int,
     showAnim: boolean,
     keepActiveItem: boolean,
     allowNonMainPlayer: boolean,
@@ -156,7 +156,7 @@ declare class EntityPlayer extends Entity {
   GetTearRangeModifier(): int;
   GetTrinketMultiplier(): int;
   GetEffects(): TemporaryEffects;
-  HasWeaponType(weaponType: WeaponType): boolean;
+  HasWeaponType(weaponType: WeaponType | int): boolean;
   GetActiveWeaponEntity(): Entity;
   GetTractorBeam(): Entity;
   CanPickupItem(): boolean;
@@ -164,23 +164,23 @@ declare class EntityPlayer extends Entity {
   IsHeldItemVisible(): boolean;
   Revive(): void;
   TryRemoveCollectibleCostume(
-    collectibleType: CollectibleType,
+    collectibleType: CollectibleType | int,
     keepPersistent: boolean,
   ): void;
-  TryRemoveTrinketCostume(trinketType: TrinketType): void;
-  TryRemoveNullCostume(nullItemID: NullItemID): void;
+  TryRemoveTrinketCostume(trinketType: TrinketType | int): void;
+  TryRemoveNullCostume(nullItemID: NullItemID | int): void;
   AnimateCollectible(
-    collectibleType: CollectibleType,
+    collectibleType: CollectibleType | int,
     playerAnimationName: PlayerAnimationName,
     collectibleAnimationName: CollectibleAnimationName,
   ): void;
   AnimateTrinket(
-    trinketType: TrinketType,
+    trinketType: TrinketType | int,
     animName: string,
     spriteAnimName: string,
   ): void;
-  AnimateCard(card: Card, animName: string): void;
-  AnimatePill(pillColor: PillColor, animName: string): void;
+  AnimateCard(card: Card | int, animName: string): void;
+  AnimatePill(pillColor: PillColor | int, animName: string): void;
   AnimateTrapdoor(): void;
   AnimateLightTravel(): void;
   AnimateAppear(): void;
@@ -198,14 +198,14 @@ declare class EntityPlayer extends Entity {
   ResetDamageCooldown(): void;
   SetMinDamageCooldown(damageCooldown: int): void;
   AreControlsEnabled(): boolean;
-  UseCard(card: Card): void;
-  UsePill(pillEffect: PillEffect, pillColor: PillColor): void;
+  UseCard(card: Card | int): void;
+  UsePill(pillEffect: PillEffect | int, pillColor: PillColor | int): void;
   HasInvincibility(): boolean;
   SetShootingCooldown(cooldown: int): void;
   SetTargetTrapDoor(trapDoor: GridEntity): void;
   FireDelayedBrimstone(angle: float, parent: Entity): EntityLaser;
   GetLastDamageSource(): Readonly<EntityRef>;
-  GetLastDamageFlags(): DamageFlag;
+  GetLastDamageFlags(): DamageFlag | int;
   GetTotalDamageTaken(): int;
   FireTear(
     position: Vector,
@@ -218,7 +218,7 @@ declare class EntityPlayer extends Entity {
   FireBrimstone(direction: Vector): EntityLaser;
   FireTechLaser(
     position: Vector,
-    laserOffset: LaserOffset,
+    laserOffset: LaserOffset | int,
     direction: Vector,
     leftEye: boolean,
     oneHit: boolean,
@@ -234,14 +234,14 @@ declare class EntityPlayer extends Entity {
     cantOverwrite: boolean,
     subType: int,
   ): EntityKnife;
-  GetBabySkin(): BabySubType;
+  GetBabySkin(): BabySubType | int;
   CanShoot(): boolean;
   IsP2Appearing(): boolean;
   IsFullSpriteRendering(): boolean;
-  GetCollectibleRNG(collectibleType: CollectibleType): RNG;
-  GetTrinketRNG(trinketType: TrinketType): RNG;
-  GetPillRNG(pillEffect: PillEffect): RNG;
-  GetCardRNG(card: Card): RNG;
+  GetCollectibleRNG(collectibleType: CollectibleType | int): RNG;
+  GetTrinketRNG(trinketType: TrinketType | int): RNG;
+  GetPillRNG(pillEffect: PillEffect | int): RNG;
+  GetCardRNG(card: Card | int): RNG;
   AddDeadEyeCharge(): void;
   ClearDeadEyeCharge(): void;
   GetZodiacEffect(): ZodiacCollectibles;
@@ -266,12 +266,12 @@ declare class EntityPlayer extends Entity {
   InitBabySkin(): void;
   CanTurnHead(): boolean;
   CheckFamiliar(
-    familiarVariant: FamiliarVariant,
+    familiarVariant: FamiliarVariant | int,
     targetCount: int,
     rng: RNG,
   ): void;
   UpdateCanShoot(): void;
-  GetLaserOffset(laserOffset: LaserOffset, direction: Vector): Vector;
+  GetLaserOffset(laserOffset: LaserOffset | int, direction: Vector): Vector;
   GetTearMovementInheritance(shotDirection: Vector): Vector;
   GetCostumeNullPos(
     nullFrameName: string,
@@ -283,7 +283,7 @@ declare class EntityPlayer extends Entity {
     spritePath: string,
     spriteID: int,
   ): void;
-  AddPlayerFormCostume(playerForm: PlayerForm): void;
+  AddPlayerFormCostume(playerForm: PlayerForm | int): void;
   ResetItemState(): void;
   SpawnMawOfVoid(timeout: int): EntityLaser;
   AddDollarBillEffect(): void;
@@ -315,12 +315,12 @@ declare class EntityPlayer extends Entity {
   TearFallingSpeed: float;
   TearFallingAcceleration: float;
   MoveSpeed: float;
-  TearFlags: TearFlags;
+  TearFlags | int: TearFlags | int;
   TearColor: Color;
   LaserColor: Color;
   CanFly: boolean;
   Luck: float;
-  BabySkin: BabySubType;
+  BabySkin: BabySubType | int;
   QueuedItem: QueueItemData;
   ItemHoldCooldown: int;
   SecondaryActiveItem: ItemConfigItem;

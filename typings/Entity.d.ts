@@ -1,4 +1,4 @@
-type EntityVariantForAC = EffectVariant | PickupVariant | BombVariant | FamiliarVariant | TearVariant | ProjectileVariant | PlayerVariant | LaserVariant; // Not actually limited to those, but give autocompletion
+type EntityVariantForAC = EffectVariant | PickupVariant | BombVariant | FamiliarVariant | TearVariant | ProjectileVariant | PlayerVariant | LaserVariant | int; // Not actually limited to those, but give autocompletion
 
 declare class Entity {
   GetData(): Record<string, unknown>;
@@ -35,10 +35,10 @@ declare class Entity {
   IsActiveEnemy(includeDead: boolean): boolean;
   IsVulnerableEnemy(): boolean;
   IsFlying(): boolean;
-  AddEntityFlags(entityFlags: EntityFlag): void;
-  ClearEntityFlags(entityFlags: EntityFlag): void;
-  GetEntityFlags(): EntityFlag;
-  HasEntityFlags(entityFlags: EntityFlag): boolean;
+  AddEntityFlags(entityFlags: EntityFlag | int): void;
+  ClearEntityFlags(entityFlags: EntityFlag | int): void;
+  GetEntityFlags(): EntityFlag | int;
+  HasEntityFlags(entityFlags: EntityFlag | int): boolean;
   HasFullHealth(): boolean;
   AddHealth(hitPoints: float): void;
   AddPoison(source: EntityRef, duration: int, damage: float): void;
@@ -83,10 +83,10 @@ declare class Entity {
   Friction: float;
   Position: Vector;
   Velocity: Vector;
-  readonly Type: EntityType;
+  readonly Type: EntityType | int;
   Variant: EntityVariantForAC
   SubType: int;
-  SpawnerType: EntityType;
+  SpawnerType: EntityType | int;
   SpawnerVariant: EntityVariantForAC;
   readonly SplatColor: Readonly<Color>;
   Visible: boolean;
@@ -102,8 +102,8 @@ declare class Entity {
   HitPoints: float;
   readonly Index: int;
   readonly TargetPosition: Readonly<Vector>;
-  GridCollisionClass: GridCollisionClass;
-  EntityCollisionClass: EntityCollisionClass;
+  GridCollisionClass: GridCollisionClass | int;
+  EntityCollisionClass: EntityCollisionClass | int;
   CollisionDamage: float;
   readonly SpawnGridIndex: int;
   Parent: Entity;

@@ -8,9 +8,9 @@ declare class EntityFamiliar extends Entity {
   GetOrbitPosition(position: Vector): Vector;
   Shoot(): void;
   FireProjectile(direction: Vector): EntityTear;
-  PlayChargeAnim(direction: Direction): void;
-  PlayShootAnim(direction: Direction): void;
-  PlayFloatAnim(direction: Direction): void;
+  PlayChargeAnim(direction: Direction | int): void;
+  PlayShootAnim(direction: Direction | int): void;
+  PlayFloatAnim(direction: Direction | int): void;
   MoveDelayed(numFrames: int): void;
   MoveDiagonally(speed: float): void;
   RecalculateOrbitOffset(layer: int, add: boolean): int;
@@ -27,9 +27,9 @@ declare class EntityFamiliar extends Entity {
   Keys: int;
   FireCooldown: int;
   HeadFrameDelay: int;
-  MoveDirection: Direction;
-  ShootDirection: Direction;
-  LastDirection: Direction;
+  MoveDirection: Direction | int;
+  ShootDirection: Direction | int;
+  LastDirection: Direction | int;
   OrbitAngleOffset: float;
   OrbitDistance: Vector;
   State: int;

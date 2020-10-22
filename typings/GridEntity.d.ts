@@ -1,7 +1,7 @@
-type GridEntityVariantForAC = DoorVariant | PoopVariant | PlateVariant; // @TODO: add custom enums for other grid types
+type GridEntityVariantForAC = DoorVariant | PoopVariant | PlateVariant | int; // @TODO: add custom enums for other grid types
 
 declare class GridEntity {
-  SetType(gridEntityType: GridEntityType): void;
+  SetType(gridEntityType: GridEntityType | int): void;
   SetVariant(variant: GridEntityVariantForAC): void;
   Init(seed: int): void;
   PostInit(): void;
@@ -9,7 +9,7 @@ declare class GridEntity {
   Render(offset: Vector): void;
   Hurt(damage: int): boolean;
   Destroy(immediate: boolean): boolean;
-  GetType(): GridEntityType;
+  GetType(): GridEntityType | int;
   GetVariant(): GridEntityVariantForAC;
   GetGridIndex(): int;
   GetSaveState(): GridEntityDesc;
@@ -26,6 +26,6 @@ declare class GridEntity {
   VarData: int;
   // Desc: GridEntityDesc; // Should use GetSaveState() instead
   RNG: RNG;
-  CollisionClass: GridCollisionClass;
+  CollisionClass: GridCollisionClass | int;
   Sprite: Sprite;
 }

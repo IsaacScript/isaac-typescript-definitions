@@ -1,5 +1,5 @@
 declare class GridEntityDoor extends GridEntity {
-  SetRoomTypes(currentRoomType: RoomType, targetRoomType: RoomType): void;
+  SetRoomTypes(currentRoomType: RoomType | int, targetRoomType: RoomType | int): void;
   Open(): void;
   Close(force: boolean): void;
   Bar(): void;
@@ -12,20 +12,20 @@ declare class GridEntityDoor extends GridEntity {
   SetLocked(locked: boolean): void;
   IsLocked(): boolean;
   IsBusted(): boolean;
-  IsRoomType(roomType: RoomType): boolean;
+  IsRoomType(roomType: RoomType | int): boolean;
   IsTargetRoomArcade(): boolean;
   GetSpriteOffset(): Readonly<Vector>;
 
-  Direction: Direction;
+  Direction: Direction | int;
   TargetRoomIndex: int;
-  Slot: DoorSlot;
-  CurrentRoomType: RoomType;
-  TargetRoomType: RoomType;
+  Slot: DoorSlot | int;
+  CurrentRoomType: RoomType | int;
+  TargetRoomType: RoomType | int;
   ExtraSprite: Sprite;
   ExtraVisible: boolean;
   Busted: boolean;
   PreviousState: int;
-  PreviousVariant: DoorVariant;
+  PreviousVariant: DoorVariant | int;
   OpenAnimation: string;
   CloseAnimation: string;
   LockedAnimation: string;

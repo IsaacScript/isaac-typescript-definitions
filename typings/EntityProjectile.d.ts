@@ -4,7 +4,7 @@ declare class EntityProjectile extends Entity {
   AddFallingAccel(value: float): void;
   AddChangeFlags(flags: int): void;
   AddScale(value: float): void;
-  AddProjectileFlags(flags: ProjectileFlags): void;
+  AddProjectileFlags(flags: ProjectileFlags | int): void;
 
   Height: float;
   FallingSpeed: float;
@@ -13,11 +13,11 @@ declare class EntityProjectile extends Entity {
   CurvingStrength: float;
   Acceleration: float;
   WiggleFrameOffset: int;
-  ChangeFlags: ProjectileFlags;
+  ChangeFlags: ProjectileFlags | int;
   ChangeVelocity: float;
   ChangeTimeout: int;
   Scale: float;
-  ProjectileFlags: ProjectileFlags;
+  ProjectileFlags | int: ProjectileFlags | int;
   DepthOffset: float;
   Damage: float;
 }

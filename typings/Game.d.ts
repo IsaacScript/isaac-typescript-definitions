@@ -3,7 +3,7 @@ declare class Game {
   Render(): void;
   IsPaused(): boolean;
   Spawn(
-    entityType: EntityType,
+    entityType: EntityType | int,
     variant: EntityVariantForAC,
     position: Vector,
     velocity: Vector,
@@ -24,14 +24,14 @@ declare class Game {
     radius: float,
     lineCheck: boolean,
     source: Entity,
-    tearFlags: TearFlags,
-    damageFlags: DamageFlag,
+    tearFlags: TearFlags | int,
+    damageFlags: DamageFlag | int,
     damageSource: boolean,
   ): void;
   BombExplosionEffects(
     position: Vector,
     damage: float,
-    tearFlags: TearFlags,
+    tearFlags: TearFlags | int,
     color: Color,
     source: Entity,
     radiusMult: float,
@@ -41,7 +41,7 @@ declare class Game {
   BombTearflagEffects(
     position: Vector,
     radius: float,
-    tearFlags: TearFlags,
+    tearFlags: TearFlags | int,
     source: Entity,
   ): void;
   Fart(
@@ -61,7 +61,7 @@ declare class Game {
   RerollEnemy(entity: Entity): boolean;
   SpawnParticles(
     position: Vector,
-    effectVariant: EffectVariant,
+    effectVariant: EffectVariant | int,
     numParticles: int,
     speed: float,
     color: Color,
@@ -83,7 +83,7 @@ declare class Game {
   ShowRule(): void;
   StartRoomTransition(
     roomIndex: int,
-    direction: Direction,
+    direction: Direction | int,
     roomTransition: RoomTransition,
   ): void;
   ChangeRoom(roomIndex: int): void;
@@ -93,10 +93,10 @@ declare class Game {
   ): void;
   MoveToRandomRoom(IAmErrorRoom: boolean, seed: int): void;
   GetFrameCount(): int;
-  GetStateFlag(gameStateFlag: GameStateFlag): boolean;
-  SetStateFlag(gameStateFlag: GameStateFlag, val: boolean): void;
-  SetLastDevilRoomStage(levelStage: LevelStage): void;
-  GetLastDevilRoomStage(): LevelStage;
+  GetStateFlag(gameStateFlag: GameStateFlag | int): boolean;
+  SetStateFlag(gameStateFlag: GameStateFlag | int, val: boolean): void;
+  SetLastDevilRoomStage(levelStage: LevelStage | int): void;
+  GetLastDevilRoomStage(): LevelStage | int;
   AddTreasureRoomsVisited(): void;
   GetTreasureRoomVisitCount(): int;
   AddStageWithoutHeartsPicked(): void;
@@ -113,15 +113,15 @@ declare class Game {
   GetDonationModAngel(): int;
   ClearDonationModGreed(): void;
   ClearDonationModAngel(): void;
-  SetLastLevelWithDamage(levelStage: LevelStage): void;
-  GetLastLevelWithDamage(): LevelStage;
-  AddEncounteredBoss(entityType: EntityType, variant: EntityVariantForAC): void;
+  SetLastLevelWithDamage(levelStage: LevelStage | int): void;
+  GetLastLevelWithDamage(): LevelStage | int;
+  AddEncounteredBoss(entityType: EntityType | int, variant: EntityVariantForAC): void;
   GetNumEncounteredBosses(): int;
-  HasEncounteredBoss(entityType: EntityType, variant: EntityVariantForAC): boolean;
+  HasEncounteredBoss(entityType: EntityType | int, variant: EntityVariantForAC): boolean;
   GetGreedWavesNum(): int;
   GetGreedBossWaveNum(): int;
-  SetLastLevelWithoutHalfHp(levelStage: LevelStage): void;
-  GetLastLevelWithoutHalfHp(): LevelStage;
+  SetLastLevelWithoutHalfHp(levelStage: LevelStage | int): void;
+  GetLastLevelWithoutHalfHp(): LevelStage | int;
   ShakeScreen(timeout: int): void;
   GetScreenShakeCountdown(): Readonly<int>;
   Darken(darkness: float, timeout: int): void;
@@ -150,7 +150,7 @@ declare class Game {
   BossRushParTime: int;
   BlueWombParTime: int;
   readonly ScreenShakeOffset: Readonly<Vector>;
-  Challenge: Challenge;
-  readonly Difficulty: Difficulty;
+  Challenge: Challenge | int;
+  readonly Difficulty: Difficulty | int;
   TimeCounter: int;
 }

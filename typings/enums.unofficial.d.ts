@@ -38,7 +38,7 @@ declare const enum LaserVariant {
   LASER_BRIMTECH = 9, // Brimstone + Technology
 }
 
-// GridEntityType.GRID_POOP (14)
+// GridEntityType | int.GRID_POOP (14)
 declare const enum PoopVariant {
   POOP_NORMAL = 0,
   POOP_RED = 1,

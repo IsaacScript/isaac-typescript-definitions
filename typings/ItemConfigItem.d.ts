@@ -3,13 +3,13 @@ declare class ItemConfigItem {
   IsTrinket(): boolean;
   IsNull(): boolean;
 
-  Type: ItemType;
+  Type: ItemType | int;
   ID: int;
   Name: string;
   Description: string;
   GfxFileName: string;
   AchievementID: int;
-  CacheFlags: CacheFlag;
+  CacheFlags: CacheFlag | int;
   AddMaxHearts: int;
   AddHearts: int;
   AddSoulHearts: int;

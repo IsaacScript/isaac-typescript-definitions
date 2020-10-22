@@ -2,23 +2,23 @@ declare class Seeds {
   SetStartSeed(startSeed: string): void;
   ClearStartSeed(): void;
   IsCustomRun(): boolean;
-  Restart(challenge: Challenge): void;
+  Restart(challenge: Challenge | int): void;
   Reset(): void;
   IsInitialized(): boolean;
   GetStartSeed(): int;
   GetStartSeedString(): string;
   GetNextSeed(): int;
-  GetStageSeed(levelStage: LevelStage): int;
+  GetStageSeed(levelStage: LevelStage | int): int;
   GetPlayerInitSeed(): int;
-  ForgetStageSeed(levelStage: LevelStage): void;
-  HasSeedEffect(seedEffect: SeedEffect): boolean;
-  AddSeedEffect(seedEffect: SeedEffect): void;
-  RemoveSeedEffect(seedEffect: SeedEffect): void;
-  RemoveBlockingSeedEffects(seedEffect: SeedEffect): void;
+  ForgetStageSeed(levelStage: LevelStage | int): void;
+  HasSeedEffect(seedEffect: SeedEffect | int): boolean;
+  AddSeedEffect(seedEffect: SeedEffect | int): void;
+  RemoveSeedEffect(seedEffect: SeedEffect | int): void;
+  RemoveBlockingSeedEffects(seedEffect: SeedEffect | int): void;
   ClearSeedEffects(): void;
-  CanAddSeedEffect(seedEffect: SeedEffect): boolean;
+  CanAddSeedEffect(seedEffect: SeedEffect | int): boolean;
   CountSeedEffects(): int;
-  IsSeedComboBanned(seedEffect1: SeedEffect, seedEffect2: SeedEffect): boolean;
+  IsSeedComboBanned(seedEffect1: SeedEffect | int, seedEffect2: SeedEffect | int): boolean;
 
   /** @noSelf */
   static String2Seed(str: string): int;
@@ -27,7 +27,7 @@ declare class Seeds {
   /** @noSelf */
   static IsStringValidSeed(str: string): boolean;
   /** @noSelf */
-  static GetSeedEffect(str: string): SeedEffect;
+  static GetSeedEffect(str: string): SeedEffect | int;
   /** @noSelf */
   static IsSpecialSeed(str: string): boolean;
   /** @noSelf */

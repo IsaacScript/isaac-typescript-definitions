@@ -1,5 +1,5 @@
 declare class RoomConfigEntry {
-  Type: RoomType;
+  Type: RoomType | int;
   Variant: int;
   Subtype: int;
   Weight: int;

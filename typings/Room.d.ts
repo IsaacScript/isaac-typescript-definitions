@@ -3,18 +3,18 @@ declare class Room {
   Update(): void;
   Render(): void;
   IsInitialized(): boolean;
-  GetGridCollision(gridIndex: int): GridCollisionClass;
-  GetGridCollisionAtPos(position: Vector): GridCollisionClass;
-  GetDoor(doorSlot: DoorSlot): GridEntityDoor;
-  GetDoorSlotPosition(doorSlot: DoorSlot): Vector;
-  IsDoorSlotAllowed(doorSlot: DoorSlot): boolean;
-  RemoveDoor(doorSlot: DoorSlot): void;
+  GetGridCollision(gridIndex: int): GridCollisionClass | int;
+  GetGridCollisionAtPos(position: Vector): GridCollisionClass | int;
+  GetDoor(doorSlot: DoorSlot | int): GridEntityDoor;
+  GetDoorSlotPosition(doorSlot: DoorSlot | int): Vector;
+  IsDoorSlotAllowed(doorSlot: DoorSlot | int): boolean;
+  RemoveDoor(doorSlot: DoorSlot | int): void;
   KeepDoorsClosed(): void;
-  GetType(): RoomType;
+  GetType(): RoomType | int;
   GetDecorationSeed(): int;
   GetSpawnSeed(): int;
   GetAwardSeed(): int;
-  GetRoomShape(): RoomShape;
+  GetRoomShape(): RoomShape | int;
   GetRoomConfigStage(): int;
   GetGridPath(index: int): int;
   GetGridPathFromPos(index: int): int;
@@ -57,7 +57,7 @@ declare class Room {
   GetCenterPos(): Vector;
   SpawnGridEntity(
     gridIndex: int,
-    gridEntityType: GridEntityType,
+    gridEntityType: GridEntityType | int,
     variant: GridEntityVariantForAC,
     seed: int,
     varData: int,
@@ -101,7 +101,7 @@ declare class Room {
   GetRenderSurfaceTopLeft(): Readonly<Vector>;
   GetRenderScrollOffset(): Readonly<Vector>;
   HasWaterPits(): boolean;
-  GetSeededCollectible(seed: int): CollectibleType;
+  GetSeededCollectible(seed: int): CollectibleType | int;
   GetShopLevel(): int;
   SetShockwaveParam(shockwaveID: int, shockwaveParams: ShockwaveParams): void;
   GetNextShockwaveId(): int;
