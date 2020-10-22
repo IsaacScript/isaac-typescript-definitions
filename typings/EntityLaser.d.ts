@@ -36,7 +36,7 @@ declare class EntityLaser extends Entity {
     margin: float,
   ): Vector;
 
-  TearFlags | int: TearFlags | int;
+  TearFlags: TearFlags;
   Angle: float;
   Radius: float;
   ParentOffset: Vector;

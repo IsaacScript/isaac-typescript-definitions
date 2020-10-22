@@ -11,7 +11,8 @@ type EntityVariantForAC =
   | TearVariant
   | ProjectileVariant
   | PlayerVariant
-  | LaserVariant;
+  | LaserVariant
+  | int;
 
 declare class Entity {
   GetData(): Record<string, unknown>;
@@ -48,10 +49,10 @@ declare class Entity {
   IsActiveEnemy(includeDead: boolean): boolean;
   IsVulnerableEnemy(): boolean;
   IsFlying(): boolean;
-  AddEntityFlags(entityFlags: EntityFlag | int): void;
-  ClearEntityFlags(entityFlags: EntityFlag | int): void;
-  GetEntityFlags(): EntityFlag | int;
-  HasEntityFlags(entityFlags: EntityFlag | int): boolean;
+  AddEntityFlags(entityFlags: EntityFlag): void;
+  ClearEntityFlags(entityFlags: EntityFlag): void;
+  GetEntityFlags(): EntityFlag;
+  HasEntityFlags(entityFlags: EntityFlag): boolean;
   HasFullHealth(): boolean;
   AddHealth(hitPoints: float): void;
   AddPoison(source: EntityRef, duration: int, damage: float): void;
@@ -115,8 +116,8 @@ declare class Entity {
   HitPoints: float;
   readonly Index: int;
   readonly TargetPosition: Readonly<Vector>;
-  GridCollisionClass: GridCollisionClass | int;
-  EntityCollisionClass: EntityCollisionClass | int;
+  GridCollisionClass: EntityGridCollisionClass;
+  EntityCollisionClass: EntityCollisionClass;
   CollisionDamage: float;
   readonly SpawnGridIndex: int;
   Parent: Entity;

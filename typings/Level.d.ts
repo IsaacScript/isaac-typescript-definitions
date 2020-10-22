@@ -12,8 +12,8 @@ declare class Level {
   CanStageHaveCurseOfLabyrinth(levelStage: LevelStage | int): boolean;
   GetCurseName(): string;
   ShowName(sticky: boolean): void;
-  GetStateFlag(levelStateFlag: LevelStateFlag | int): boolean;
-  SetStateFlag(levelStateFlag: LevelStateFlag | int, val: boolean): void;
+  GetStateFlag(levelStateFlag: LevelStateFlag): boolean;
+  SetStateFlag(levelStateFlag: LevelStateFlag, val: boolean): void;
   GetCurrentRoom(): Room;
   GetPreviousRoomIndex(): int;
   GetCurrentRoomIndex(): int;

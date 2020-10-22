@@ -16,7 +16,7 @@ declare class GridEntityDoor extends GridEntity {
   IsTargetRoomArcade(): boolean;
   GetSpriteOffset(): Readonly<Vector>;
 
-  Direction: Direction | int;
+  Direction: Direction;
   TargetRoomIndex: int;
   Slot: DoorSlot | int;
   CurrentRoomType: RoomType | int;

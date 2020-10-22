@@ -24,14 +24,14 @@ declare class Game {
     radius: float,
     lineCheck: boolean,
     source: Entity,
-    tearFlags: TearFlags | int,
+    tearFlags: TearFlags,
     damageFlags: DamageFlag | int,
     damageSource: boolean,
   ): void;
   BombExplosionEffects(
     position: Vector,
     damage: float,
-    tearFlags: TearFlags | int,
+    tearFlags: TearFlags,
     color: Color,
     source: Entity,
     radiusMult: float,
@@ -41,7 +41,7 @@ declare class Game {
   BombTearflagEffects(
     position: Vector,
     radius: float,
-    tearFlags: TearFlags | int,
+    tearFlags: TearFlags,
     source: Entity,
   ): void;
   Fart(
@@ -83,7 +83,7 @@ declare class Game {
   ShowRule(): void;
   StartRoomTransition(
     roomIndex: int,
-    direction: Direction | int,
+    direction: Direction,
     roomTransition: RoomTransition | int,
   ): void;
   ChangeRoom(roomIndex: int): void;

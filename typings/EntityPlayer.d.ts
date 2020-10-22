@@ -55,7 +55,7 @@ declare class EntityPlayer extends Entity {
   AddPrettyFly(): void;
   TryUseKey(): boolean;
   AddCostume(itemConfigItem: ItemConfigItem, itemStateOnly: boolean): void;
-  AddNullCostume(nullItemID: NullItemID | int): void;
+  AddNullCostume(nullItemID: NullItemID): void;
   RemoveCostume(itemConfigItem: ItemConfigItem): void;
   RemoveSkinCostume(): void;
   ClearCostumes(): void;
@@ -109,9 +109,9 @@ declare class EntityPlayer extends Entity {
   EvaluateItems(): void;
   RespawnFamiliars(): void;
   GetNPCTarget(): Entity;
-  GetMovementDirection(): Direction | int;
-  GetFireDirection(): Direction | int;
-  GetHeadDirection(): Direction | int;
+  GetMovementDirection(): Direction;
+  GetFireDirection(): Direction;
+  GetHeadDirection(): Direction;
   GetAimDirection(): Readonly<Vector>;
   GetMovementVector(): Readonly<Vector>;
   GetRecentMovementVector(): Readonly<Vector>;
@@ -122,8 +122,8 @@ declare class EntityPlayer extends Entity {
   GetVelocityBeforeUpdate(): Readonly<Vector>;
   GetSmoothBodyRotation(): float;
   GetTearPoisonDamage(): float;
-  GetBombFlags(): TearFlags | int;
-  GetBombVariant(tearFlags: TearFlags | int, forceSmallBomb: boolean): BombVariant | int;
+  GetBombFlags(): TearFlags;
+  GetBombVariant(tearFlags: TearFlags, forceSmallBomb: boolean): BombVariant | int;
   GetTearHitParams(
     weaponType: WeaponType | int,
     damageScale: float,
@@ -168,7 +168,7 @@ declare class EntityPlayer extends Entity {
     keepPersistent: boolean,
   ): void;
   TryRemoveTrinketCostume(trinketType: TrinketType | int): void;
-  TryRemoveNullCostume(nullItemID: NullItemID | int): void;
+  TryRemoveNullCostume(nullItemID: NullItemID): void;
   AnimateCollectible(
     collectibleType: CollectibleType | int,
     playerAnimationName: PlayerAnimationName,
@@ -315,7 +315,7 @@ declare class EntityPlayer extends Entity {
   TearFallingSpeed: float;
   TearFallingAcceleration: float;
   MoveSpeed: float;
-  TearFlags: TearFlags | int;
+  TearFlags: TearFlags;
   TearColor: Color;
   LaserColor: Color;
   CanFly: boolean;

@@ -10,7 +10,7 @@ declare class EntityTear extends Entity {
   FallingSpeed: float;
   FallingAcceleration: float;
   Scale: float;
-  TearFlags | int: TearFlags | int;
+  TearFlags: TearFlags;
   readonly TearIndex: int;
   Rotation: float;
   HomingFriction: float;
