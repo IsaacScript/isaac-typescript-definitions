@@ -145,12 +145,12 @@ declare class Game {
   UpdateStrangeAttractor(position: Vector): void;
   // GetAmbush(): Ambush; // Ambush is not implemented
   Fadein(speed: float): void;
-  Fadeout(speed: float, fadeoutTarget: FadeoutTarget | int): void;
+  Fadeout(speed: float, fadeoutTarget: FadeoutTarget): void;
 
   BossRushParTime: int;
   BlueWombParTime: int;
   readonly ScreenShakeOffset: Readonly<Vector>;
   Challenge: Challenge | int;
-  readonly Difficulty: Difficulty | int;
+  readonly Difficulty: Difficulty;
   TimeCounter: int;
 }
