@@ -3,18 +3,18 @@ declare class Room {
   Update(): void;
   Render(): void;
   IsInitialized(): boolean;
-  GetGridCollision(gridIndex: int): GridCollisionClass | int;
-  GetGridCollisionAtPos(position: Vector): GridCollisionClass | int;
-  GetDoor(doorSlot: DoorSlot | int): GridEntityDoor;
-  GetDoorSlotPosition(doorSlot: DoorSlot | int): Vector;
-  IsDoorSlotAllowed(doorSlot: DoorSlot | int): boolean;
-  RemoveDoor(doorSlot: DoorSlot | int): void;
+  GetGridCollision(gridIndex: int): GridCollisionClass;
+  GetGridCollisionAtPos(position: Vector): GridCollisionClass;
+  GetDoor(doorSlot: DoorSlot): GridEntityDoor;
+  GetDoorSlotPosition(doorSlot: DoorSlot): Vector;
+  IsDoorSlotAllowed(doorSlot: DoorSlot): boolean;
+  RemoveDoor(doorSlot: DoorSlot): void;
   KeepDoorsClosed(): void;
-  GetType(): RoomType | int;
+  GetType(): RoomType;
   GetDecorationSeed(): int;
   GetSpawnSeed(): int;
   GetAwardSeed(): int;
-  GetRoomShape(): RoomShape | int;
+  GetRoomShape(): RoomShape;
   GetRoomConfigStage(): int;
   GetGridPath(index: int): int;
   GetGridPathFromPos(index: int): int;
@@ -24,7 +24,7 @@ declare class Room {
   CheckLine(
     position1: Vector,
     position2: Vector,
-    lineCheckMode: LineCheckMode | int,
+    lineCheckMode: LineCheckMode,
     gridPathThreshold: int,
     ignoreWalls: boolean,
     ignoreCrushable: boolean,

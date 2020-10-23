@@ -1,10 +1,10 @@
 declare class RoomConfig {
   StageID: int;
-  Type: RoomType | int;
+  Type: RoomType;
   Variant: int;
   Subtype: int;
   Name: string;
-  Difficulty | int: Difficulty | int;
+  Difficulty: Difficulty;
   InitialWeight: float;
   Weight: float;
   // Doors: IntList; // IntList is not implemented
@@ -12,5 +12,5 @@ declare class RoomConfig {
   SpawnCount: int;
   Width: int;
   Height: int;
-  Shape: RoomShape | int;
+  Shape: RoomShape;
 }

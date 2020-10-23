@@ -11,14 +11,14 @@ declare class Seeds {
   GetStageSeed(levelStage: LevelStage): int;
   GetPlayerInitSeed(): int;
   ForgetStageSeed(levelStage: LevelStage): void;
-  HasSeedEffect(seedEffect: SeedEffect | int): boolean;
-  AddSeedEffect(seedEffect: SeedEffect | int): void;
-  RemoveSeedEffect(seedEffect: SeedEffect | int): void;
-  RemoveBlockingSeedEffects(seedEffect: SeedEffect | int): void;
+  HasSeedEffect(seedEffect: SeedEffect): boolean;
+  AddSeedEffect(seedEffect: SeedEffect): void;
+  RemoveSeedEffect(seedEffect: SeedEffect): void;
+  RemoveBlockingSeedEffects(seedEffect: SeedEffect): void;
   ClearSeedEffects(): void;
-  CanAddSeedEffect(seedEffect: SeedEffect | int): boolean;
+  CanAddSeedEffect(seedEffect: SeedEffect): boolean;
   CountSeedEffects(): int;
-  IsSeedComboBanned(seedEffect1: SeedEffect | int, seedEffect2: SeedEffect | int): boolean;
+  IsSeedComboBanned(seedEffect1: SeedEffect, seedEffect2: SeedEffect): boolean;
 
   /** @noSelf */
   static String2Seed(str: string): int;
@@ -27,7 +27,7 @@ declare class Seeds {
   /** @noSelf */
   static IsStringValidSeed(str: string): boolean;
   /** @noSelf */
-  static GetSeedEffect(str: string): SeedEffect | int;
+  static GetSeedEffect(str: string): SeedEffect;
   /** @noSelf */
   static IsSpecialSeed(str: string): boolean;
   /** @noSelf */

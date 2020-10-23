@@ -3,7 +3,7 @@ declare class ItemConfigItem {
   IsTrinket(): boolean;
   IsNull(): boolean;
 
-  Type: ItemType | int;
+  Type: ItemType;
   ID: int;
   Name: string;
   Description: string;

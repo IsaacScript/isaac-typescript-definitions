@@ -31,6 +31,6 @@ declare class GridEntity {
   VarData: int;
   // Desc: GridEntityDesc; // Should use GetSaveState() instead
   RNG: RNG;
-  CollisionClass: GridCollisionClass | int;
+  CollisionClass: GridCollisionClass;
   Sprite: Sprite;
 }

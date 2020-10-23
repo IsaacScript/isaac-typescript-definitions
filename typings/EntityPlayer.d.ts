@@ -141,7 +141,7 @@ declare class EntityPlayer extends Entity {
   HasGoldenBomb(): boolean;
   GetGoldenHearts(): int;
   GetNumCoins(): int;
-  GetPlayerType(): PlayerType | int;
+  GetPlayerType(): PlayerType;
   GetTrinket(trinketIndex: 0 | 1): int;
   GetNumBlueFlies(): int;
   GetNumBlueSpiders(): int;

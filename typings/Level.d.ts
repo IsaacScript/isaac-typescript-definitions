@@ -1,10 +1,10 @@
 declare class Level {
   Update(): void;
-  SetStage(levelStage: LevelStage, stageType: StageType | int): void;
+  SetStage(levelStage: LevelStage, stageType: StageType): void;
   SetNextStage(): void;
   GetName(
     levelStage: LevelStage,
-    stageType: StageType | int,
+    stageType: StageType,
     curses: int,
     infiniteLevel: int,
     dyslexia: boolean,
@@ -25,7 +25,7 @@ declare class Level {
   GetLastRoomDesc(): Readonly<RoomDescriptor>;
   GetRooms(): RoomList;
   GetStartingRoomIndex(): int;
-  QueryRoomTypeIndex(roomType: RoomType | int, visited: boolean, rng: RNG): int;
+  QueryRoomTypeIndex(roomType: RoomType, visited: boolean, rng: RNG): int;
   GetLastBossRoomListIndex(): int;
   CanOpenChallengeRoom(roomIndex: int): boolean;
   GetEnterPosition(): Vector;
@@ -34,7 +34,7 @@ declare class Level {
   GetStage(): LevelStage;
   GetCurses(): LevelCurse | int;
   IsAltStage(): boolean;
-  GetStageType(): StageType | int;
+  GetStageType(): StageType;
   HasBossChallenge(): boolean;
   IsDevilRoomDisabled(): boolean;
   DisableDevilRoom(): void;
@@ -55,7 +55,7 @@ declare class Level {
   GetDevilAngelRoomRNG(): RNG;
   CanSpawnDevilRoom(): boolean;
   InitializeDevilAngelRoom(forceAngel: boolean, forceDevil: boolean): void;
-  UncoverHiddenDoor(currentRoomIdx: int, doorSlot: DoorSlot | int): void;
+  UncoverHiddenDoor(currentRoomIdx: int, doorSlot: DoorSlot): void;
   SetRedHeartDamage(): void;
   IsNextStageAvailable(): boolean;
   GetAbsoluteStage(): LevelStage;

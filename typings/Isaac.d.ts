@@ -85,13 +85,13 @@ declare global {
     function RegisterMod(mod: Mod, modName: string, APIVersion: int): void;
     function AddCallback(
       mod: Mod,
-      callbackID: ModCallbacks | int,
+      callbackID: ModCallbacks,
       callbackFn: () => void,
       entityID?: int,
     ): void;
     function RemoveCallback(
       mod: Mod,
-      callbackID: ModCallbacks | int,
+      callbackID: ModCallbacks,
       callbackFn: () => void,
     ): void;
     function SaveModData(mod: Mod, data: string): void;

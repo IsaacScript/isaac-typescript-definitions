@@ -2,11 +2,11 @@ declare class RoomDescriptorData {
   StageID: int;
   // Spawns: Spawns // Spawns is not implemented
   Type: int;
-  Difficulty | int: int;
+  Difficulty: int;
   Subtype: int;
   Variant: int;
   Name: string;
-  Shape: RoomShape | int;
+  Shape: RoomShape;
   SpawnCount: int;
   Height: int;
   InitialWeight: int;

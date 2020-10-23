@@ -11,7 +11,7 @@ interface CallbackParameters {
   ];
   [ModCallbacks.MC_POST_PEFFECT_UPDATE]: [
     callback: (entityPlayer: EntityPlayer) => void,
-    playerType?: PlayerType | int,
+    playerType?: PlayerType,
   ];
   [ModCallbacks.MC_USE_CARD]: [callback: (card: Card | int) => void, card?: Card | int];
   [ModCallbacks.MC_FAMILIAR_UPDATE]: [
@@ -48,10 +48,10 @@ interface CallbackParameters {
   [ModCallbacks.MC_INPUT_ACTION]: [
     callback: (
       entityPlayer: EntityPlayer,
-      inputHook: InputHook | int,
-      buttonAction: ButtonAction | int,
+      inputHook: InputHook,
+      buttonAction: ButtonAction,
     ) => boolean | float | null,
-    inputHook?: InputHook | int,
+    inputHook?: InputHook,
   ];
   [ModCallbacks.MC_POST_GAME_STARTED]: [
     callback: (isContinued: boolean) => void,
@@ -277,7 +277,7 @@ interface CallbackParameters {
   ];
   [ModCallbacks.MC_PRE_GET_COLLECTIBLE]: [
     callback: (
-      itemPoolType: ItemPoolType | int,
+      itemPoolType: ItemPoolType,
       decrease: boolean,
       seed: int,
     ) => CollectibleType | int | null,
@@ -285,7 +285,7 @@ interface CallbackParameters {
   [ModCallbacks.MC_POST_GET_COLLECTIBLE]: [
     callback: (
       collectibleType: CollectibleType | int,
-      itemPoolType: ItemPoolType | int,
+      itemPoolType: ItemPoolType,
       decrease: boolean,
       seed: int,
     ) => CollectibleType | int | null,
@@ -329,7 +329,7 @@ export default interface Mod {
     callbackID: T,
     ...args: CallbackParameters[T]
   ): void;
-  RemoveCallback(callbackID: ModCallbacks | int, callback: () => void): void;
+  RemoveCallback(callbackID: ModCallbacks, callback: () => void): void;
   SaveData(data: string): void;
   LoadData(): string;
   HasData(): boolean;
