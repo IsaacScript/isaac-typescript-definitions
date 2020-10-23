@@ -8,9 +8,9 @@ declare class Seeds {
   GetStartSeed(): int;
   GetStartSeedString(): string;
   GetNextSeed(): int;
-  GetStageSeed(levelStage: LevelStage | int): int;
+  GetStageSeed(levelStage: LevelStage): int;
   GetPlayerInitSeed(): int;
-  ForgetStageSeed(levelStage: LevelStage | int): void;
+  ForgetStageSeed(levelStage: LevelStage): void;
   HasSeedEffect(seedEffect: SeedEffect | int): boolean;
   AddSeedEffect(seedEffect: SeedEffect | int): void;
   RemoveSeedEffect(seedEffect: SeedEffect | int): void;

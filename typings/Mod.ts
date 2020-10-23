@@ -23,8 +23,8 @@ interface CallbackParameters {
     familiarVariant?: FamiliarVariant | int,
   ];
   [ModCallbacks.MC_EVALUATE_CACHE]: [
-    callback: (entityPlayer: EntityPlayer, cacheFlag: CacheFlag | int) => void,
-    cacheFlag?: CacheFlag | int,
+    callback: (entityPlayer: EntityPlayer, cacheFlag: CacheFlag) => void,
+    cacheFlag?: CacheFlag,
   ];
   [ModCallbacks.MC_POST_PLAYER_INIT]: [
     callback: (entityPlayer: EntityPlayer) => void,
@@ -38,7 +38,7 @@ interface CallbackParameters {
     callback: (
       tookDamage: Entity,
       damageAmount: float,
-      damageFlags: DamageFlag | int,
+      damageFlags: DamageFlag,
       damageSource: EntityRef,
       damageCountdownFrames: int,
     ) => boolean,

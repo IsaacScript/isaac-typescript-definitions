@@ -25,7 +25,7 @@ declare class Game {
     lineCheck: boolean,
     source: Entity,
     tearFlags: TearFlags,
-    damageFlags: DamageFlag | int,
+    damageFlags: DamageFlag,
     damageSource: boolean,
   ): void;
   BombExplosionEffects(
@@ -84,19 +84,19 @@ declare class Game {
   StartRoomTransition(
     roomIndex: int,
     direction: Direction,
-    roomTransition: RoomTransition | int,
+    roomTransition: RoomTransition,
   ): void;
   ChangeRoom(roomIndex: int): void;
   StartStageTransition(
     sameStage: boolean,
-    stageTransition: StageTransition | int,
+    stageTransition: StageTransition,
   ): void;
   MoveToRandomRoom(IAmErrorRoom: boolean, seed: int): void;
   GetFrameCount(): int;
-  GetStateFlag(gameStateFlag: GameStateFlag | int): boolean;
-  SetStateFlag(gameStateFlag: GameStateFlag | int, val: boolean): void;
-  SetLastDevilRoomStage(levelStage: LevelStage | int): void;
-  GetLastDevilRoomStage(): LevelStage | int;
+  GetStateFlag(gameStateFlag: GameStateFlag): boolean;
+  SetStateFlag(gameStateFlag: GameStateFlag, val: boolean): void;
+  SetLastDevilRoomStage(levelStage: LevelStage): void;
+  GetLastDevilRoomStage(): LevelStage;
   AddTreasureRoomsVisited(): void;
   GetTreasureRoomVisitCount(): int;
   AddStageWithoutHeartsPicked(): void;
@@ -113,15 +113,15 @@ declare class Game {
   GetDonationModAngel(): int;
   ClearDonationModGreed(): void;
   ClearDonationModAngel(): void;
-  SetLastLevelWithDamage(levelStage: LevelStage | int): void;
-  GetLastLevelWithDamage(): LevelStage | int;
+  SetLastLevelWithDamage(levelStage: LevelStage): void;
+  GetLastLevelWithDamage(): LevelStage;
   AddEncounteredBoss(entityType: EntityType | int, variant: EntityVariantForAC): void;
   GetNumEncounteredBosses(): int;
   HasEncounteredBoss(entityType: EntityType | int, variant: EntityVariantForAC): boolean;
   GetGreedWavesNum(): int;
   GetGreedBossWaveNum(): int;
-  SetLastLevelWithoutHalfHp(levelStage: LevelStage | int): void;
-  GetLastLevelWithoutHalfHp(): LevelStage | int;
+  SetLastLevelWithoutHalfHp(levelStage: LevelStage): void;
+  GetLastLevelWithoutHalfHp(): LevelStage;
   ShakeScreen(timeout: int): void;
   GetScreenShakeCountdown(): Readonly<int>;
   Darken(darkness: float, timeout: int): void;

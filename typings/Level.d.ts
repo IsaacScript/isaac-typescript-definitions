@@ -1,15 +1,15 @@
 declare class Level {
   Update(): void;
-  SetStage(levelStage: LevelStage | int, stageType: StageType | int): void;
+  SetStage(levelStage: LevelStage, stageType: StageType | int): void;
   SetNextStage(): void;
   GetName(
-    levelStage: LevelStage | int,
+    levelStage: LevelStage,
     stageType: StageType | int,
     curses: int,
     infiniteLevel: int,
     dyslexia: boolean,
   ): string;
-  CanStageHaveCurseOfLabyrinth(levelStage: LevelStage | int): boolean;
+  CanStageHaveCurseOfLabyrinth(levelStage: LevelStage): boolean;
   GetCurseName(): string;
   ShowName(sticky: boolean): void;
   GetStateFlag(levelStateFlag: LevelStateFlag): boolean;
@@ -31,7 +31,7 @@ declare class Level {
   GetEnterPosition(): Vector;
   ChangeRoom(roomIndex: int): void;
   ForceHorsemanBoss(seed: int): boolean;
-  GetStage(): LevelStage | int;
+  GetStage(): LevelStage;
   GetCurses(): LevelCurse | int;
   IsAltStage(): boolean;
   GetStageType(): StageType | int;
@@ -58,7 +58,7 @@ declare class Level {
   UncoverHiddenDoor(currentRoomIdx: int, doorSlot: DoorSlot | int): void;
   SetRedHeartDamage(): void;
   IsNextStageAvailable(): boolean;
-  GetAbsoluteStage(): LevelStage | int;
+  GetAbsoluteStage(): LevelStage;
   AddAngelRoomChance(chance: float): void;
   GetAngelRoomChance(): float;
 

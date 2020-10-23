@@ -9,7 +9,7 @@ declare class ItemConfigItem {
   Description: string;
   GfxFileName: string;
   AchievementID: int;
-  CacheFlags: CacheFlag | int;
+  CacheFlags: CacheFlag;
   AddMaxHearts: int;
   AddHearts: int;
   AddSoulHearts: int;

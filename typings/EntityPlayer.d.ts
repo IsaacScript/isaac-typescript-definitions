@@ -101,11 +101,11 @@ declare class EntityPlayer extends Entity {
   HasCollectible(collectibleType: CollectibleType | int): boolean;
   GetCollectibleNum(collectibleType: CollectibleType | int): int;
   HasTrinket(trinketType: TrinketType | int): boolean;
-  HasPlayerForm(playerForm: PlayerForm | int): boolean;
+  HasPlayerForm(playerForm: PlayerForm): boolean;
   CanAddCollectible(): boolean;
   TryHoldTrinket(trinketType: TrinketType | int): boolean;
   SetFullHearts(): void;
-  AddCacheFlags(cacheFlags: CacheFlag | int): void;
+  AddCacheFlags(cacheFlags: CacheFlag): void;
   EvaluateItems(): void;
   RespawnFamiliars(): void;
   GetNPCTarget(): Entity;
@@ -125,7 +125,7 @@ declare class EntityPlayer extends Entity {
   GetBombFlags(): TearFlags;
   GetBombVariant(tearFlags: TearFlags, forceSmallBomb: boolean): BombVariant | int;
   GetTearHitParams(
-    weaponType: WeaponType | int,
+    weaponType: WeaponType,
     damageScale: float,
     tearDisplacement: int,
   ): TearParams;
@@ -156,7 +156,7 @@ declare class EntityPlayer extends Entity {
   GetTearRangeModifier(): int;
   GetTrinketMultiplier(): int;
   GetEffects(): TemporaryEffects;
-  HasWeaponType(weaponType: WeaponType | int): boolean;
+  HasWeaponType(weaponType: WeaponType): boolean;
   GetActiveWeaponEntity(): Entity;
   GetTractorBeam(): Entity;
   CanPickupItem(): boolean;
@@ -205,7 +205,7 @@ declare class EntityPlayer extends Entity {
   SetTargetTrapDoor(trapDoor: GridEntity): void;
   FireDelayedBrimstone(angle: float, parent: Entity): EntityLaser;
   GetLastDamageSource(): Readonly<EntityRef>;
-  GetLastDamageFlags(): DamageFlag | int;
+  GetLastDamageFlags(): DamageFlag;
   GetTotalDamageTaken(): int;
   FireTear(
     position: Vector,
@@ -218,7 +218,7 @@ declare class EntityPlayer extends Entity {
   FireBrimstone(direction: Vector): EntityLaser;
   FireTechLaser(
     position: Vector,
-    laserOffset: LaserOffset | int,
+    laserOffset: LaserOffset,
     direction: Vector,
     leftEye: boolean,
     oneHit: boolean,
@@ -271,7 +271,7 @@ declare class EntityPlayer extends Entity {
     rng: RNG,
   ): void;
   UpdateCanShoot(): void;
-  GetLaserOffset(laserOffset: LaserOffset | int, direction: Vector): Vector;
+  GetLaserOffset(laserOffset: LaserOffset, direction: Vector): Vector;
   GetTearMovementInheritance(shotDirection: Vector): Vector;
   GetCostumeNullPos(
     nullFrameName: string,
@@ -283,7 +283,7 @@ declare class EntityPlayer extends Entity {
     spritePath: string,
     spriteID: int,
   ): void;
-  AddPlayerFormCostume(playerForm: PlayerForm | int): void;
+  AddPlayerFormCostume(playerForm: PlayerForm): void;
   ResetItemState(): void;
   SpawnMawOfVoid(timeout: int): EntityLaser;
   AddDollarBillEffect(): void;
