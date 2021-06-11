@@ -4608,6 +4608,16 @@ AddEnumToNamespace(ItemConfig, {
 	CARDTYPE_TAROT_REVERSE = 5, 	-- Reversed tarot cards
 })
 
+SkinColor = {
+	ALL = -1,
+	WHITE = 0,
+	BLACK = 1,
+	BLUE = 2,
+	RED = 3,
+	GREEN = 4,
+	GREY = 5,
+}
+
 -- The following enums are DEPRECATED and are only left in for AB+ backwards compatibility
 -- Do not use them!
 
