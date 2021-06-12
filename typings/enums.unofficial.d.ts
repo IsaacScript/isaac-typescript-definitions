@@ -405,11 +405,11 @@ declare const enum Dimension {
 }
 
 declare const enum SkinColor {
-	ALL = -1,
-	WHITE = 0,
-	BLACK = 1,
-	BLUE = 2,
-	RED = 3,
-	GREEN = 4,
-	GREY = 5,
+  ALL = -1,
+  WHITE = 0,
+  BLACK = 1,
+  BLUE = 2,
+  RED = 3,
+  GREEN = 4,
+  GREY = 5,
 }
