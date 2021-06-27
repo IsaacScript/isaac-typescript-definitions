@@ -443,7 +443,7 @@ declare const enum BossIDs {
   THE_SHELL = 96,
   TURDLET = 97,
   HORNY_BOYS = 101,
-  //POSSESSOR = 102, //uncomment when boss is finished.
+  // POSSESSOR = 102, // This boss is currently unfinished
 }
 
 declare const enum Dimension {
