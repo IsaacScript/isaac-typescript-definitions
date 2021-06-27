@@ -442,11 +442,15 @@ declare const enum BossIDs {
   COLOSTOMIA = 95,
   THE_SHELL = 96,
   TURDLET = 97,
-  //RAGLICH = 98, //uncomment when boss is finished.
-  DOGMA = 99, //via lua snippet. Cannot be acquired by any other way since it appears in normal room.
-  BEAST = 100, // via lua snippet. Cannot be acquired by any other way since it appears in crawlspace.
+  /** This boss is currently unfinished and there are no boss rooms for it. */
+  RAGLICH = 98,
+  /** Dogma does not have its own boss rooms; it appears in a normal room. */
+  DOGMA = 99,
+  /** The Beast does not have its own boss rooms; it appears in a crawlspace. */
+  BEAST = 100,
   HORNY_BOYS = 101,
-  //POSSESSOR = 102, //uncomment when boss is finished.
+  /** This boss is currently unfinished and there are no boss rooms for it. */
+  POSSESSOR = 102,
 }
 
 declare const enum Dimension {
